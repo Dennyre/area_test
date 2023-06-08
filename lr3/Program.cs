@@ -7,6 +7,7 @@ namespace lr3
         static void Main(string[] args)
         {
             double a, b, Rad;
+            int variant; 
 
             Console.WriteLine("1. Прямоугольник");
             Console.WriteLine("2. Круг");
@@ -15,9 +16,16 @@ namespace lr3
             //Console.WriteLine("5. Сектор");
 
             string temp = Console.ReadLine();
-            int variant = Convert.ToInt32(temp);    // преобразование в число
+            try
+            {
+                variant = Convert.ToInt32(temp);    // преобразование в число
+            }
+            catch { variant = 0; }
 
-            switch (variant)
+            try
+            {
+
+                switch (variant)
             {
                 case 1:
                     Console.Write("Сторона А = ");
@@ -33,11 +41,14 @@ namespace lr3
                     Console.Write("Радиус R = ");
                     temp = Console.ReadLine();
                     Rad = Convert.ToDouble(temp);
-                    Console.WriteLine("Площадь круга = " + 4 * Atan(1.0) * Pow(Rad, 2.0));
+                    Console.WriteLine("Площадь круга = " + Math.PI * Math.Pow(Rad, 2));
                     break;
 
                 default: Console.WriteLine("Выбор неверен "); break;
             }
+            }
+            catch { Console.WriteLine("Ошибка при вводе числа"); }
+
         }
     }
 }
