@@ -6,14 +6,15 @@ namespace lr3
     {
         static void Main(string[] args)
         {
-            double a, b, Rad;
+            double a, b, c, p, Rad;
             int variant; 
 
             Console.WriteLine("1. Прямоугольник");
             Console.WriteLine("2. Круг");
-            //Console.WriteLine("3. Треугольник");
+            Console.WriteLine("3. Треугольник");
             //Console.WriteLine("4. Трапеция");
             //Console.WriteLine("5. Сектор");
+            //Console.WriteLine("6. Квадрат");
 
             string temp = Console.ReadLine();
             try
@@ -44,7 +45,21 @@ namespace lr3
                     Console.WriteLine("Площадь круга = " + Math.PI * Math.Pow(Rad, 2));
                     break;
 
-                default: Console.WriteLine("Выбор неверен "); break;
+                    case 3:
+                        Console.Write("Сторона А = ");
+                        temp = Console.ReadLine();
+                        a = Convert.ToDouble(temp);
+                        Console.Write("Сторона B = ");
+                        temp = Console.ReadLine();
+                        b = Convert.ToDouble(temp);
+                        Console.Write("Сторона С = ");
+                        temp = Console.ReadLine();
+                        c= Convert.ToDouble(temp);
+                        p = (a + b + c) / 2;
+                        Console.WriteLine("Площадь треугольника = " + Math.Sqrt(p*(p-a)*(p-b)*(p-c)));
+                        break;
+
+                    default: Console.WriteLine("Выбор неверен "); break;
             }
             }
             catch { Console.WriteLine("Ошибка при вводе числа"); }
