@@ -12,9 +12,10 @@ namespace lr3
             Console.WriteLine("1. Прямоугольник");
             Console.WriteLine("2. Круг");
             Console.WriteLine("3. Треугольник");
+            Console.WriteLine("4. Квадрат");
+
             //Console.WriteLine("4. Трапеция");
             //Console.WriteLine("5. Сектор");
-            //Console.WriteLine("6. Квадрат");
 
             string temp = Console.ReadLine();
             try
@@ -58,6 +59,14 @@ namespace lr3
                         p = (a + b + c) / 2;
                         Console.WriteLine("Площадь треугольника = " + Math.Sqrt(p*(p-a)*(p-b)*(p-c)));
                         break;
+
+                    case 4:
+                        Console.Write("Сторона А = ");
+                        temp = Console.ReadLine();
+                        a = Convert.ToDouble(temp);
+                        Console.WriteLine("Площадь квадрат = " + a * a);
+                        break;
+
 
                     default: Console.WriteLine("Выбор неверен "); break;
             }
