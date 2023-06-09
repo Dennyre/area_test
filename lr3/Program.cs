@@ -6,16 +6,16 @@ namespace lr3
     {
         static void Main(string[] args)
         {
-            double a, b, c, p, Rad;
+            double a, b, c, p, h, Rad;
             int variant; 
 
             Console.WriteLine("1. Прямоугольник");
             Console.WriteLine("2. Круг");
             Console.WriteLine("3. Треугольник");
             Console.WriteLine("4. Квадрат");
+            Console.WriteLine("5. Параллелограмм");
 
             //Console.WriteLine("4. Трапеция");
-            //Console.WriteLine("5. Сектор");
 
             string temp = Console.ReadLine();
             try
@@ -29,22 +29,22 @@ namespace lr3
 
                 switch (variant)
             {
-                case 1:
-                    Console.Write("Сторона А = ");
-                    temp = Console.ReadLine();
-                    a = Convert.ToDouble(temp);
-                    Console.Write("Сторона B = ");
-                    temp = Console.ReadLine();
-                    b = Convert.ToDouble(temp);
-                    Console.WriteLine("Площадь прямоугольника = " + a * b);
-                    break;
+                    case 1:
+                        Console.Write("Сторона А = ");
+                        temp = Console.ReadLine();
+                        a = Convert.ToDouble(temp);
+                        Console.Write("Сторона B = ");
+                        temp = Console.ReadLine();
+                        b = Convert.ToDouble(temp);
+                        Console.WriteLine("Площадь прямоугольника = " + a * b);
+                        break;
 
-                case 2:
-                    Console.Write("Радиус R = ");
-                    temp = Console.ReadLine();
-                    Rad = Convert.ToDouble(temp);
-                    Console.WriteLine("Площадь круга = " + Math.PI * Math.Pow(Rad, 2));
-                    break;
+                    case 2:
+                        Console.Write("Радиус R = ");
+                        temp = Console.ReadLine();
+                        Rad = Convert.ToDouble(temp);
+                        Console.WriteLine("Площадь круга = " + Math.PI * Math.Pow(Rad, 2));
+                        break;
 
                     case 3:
                         Console.Write("Сторона А = ");
@@ -67,9 +67,18 @@ namespace lr3
                         Console.WriteLine("Площадь квадрат = " + a * a);
                         break;
 
+                    case 5:
+                        Console.Write("Сторона А = ");
+                        temp = Console.ReadLine();
+                        a = Convert.ToDouble(temp);
+                        Console.Write("Высота = ");
+                        temp = Console.ReadLine();
+                        h = Convert.ToDouble(temp);
+                        Console.WriteLine("Площадь параллелограмма = " + a * h);
+                        break;
 
                     default: Console.WriteLine("Выбор неверен "); break;
-            }
+                }
             }
             catch { Console.WriteLine("Ошибка при вводе числа"); }
 
