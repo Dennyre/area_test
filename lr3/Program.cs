@@ -14,8 +14,8 @@ namespace lr3
             Console.WriteLine("3. Треугольник");
             Console.WriteLine("4. Квадрат");
             Console.WriteLine("5. Параллелограмм");
-
-            //Console.WriteLine("4. Трапеция");
+            Console.WriteLine("6. Трапеция");
+          
 
             string temp = Console.ReadLine();
             try
@@ -75,6 +75,19 @@ namespace lr3
                         temp = Console.ReadLine();
                         h = Convert.ToDouble(temp);
                         Console.WriteLine("Площадь параллелограмма = " + a * h);
+                        break;
+
+                    case 6:
+                        Console.Write("Длина первого основания А = ");
+                        temp = Console.ReadLine();
+                        a = Convert.ToDouble(temp);
+                        Console.Write("Длина второго основания B = ");
+                        temp = Console.ReadLine();
+                        b = Convert.ToDouble(temp);
+                        Console.Write("Высота h = ");
+                        temp = Console.ReadLine();
+                        h = Convert.ToDouble(temp);
+                        Console.WriteLine("Площадь трапеции = " + (a + b) * h / 2);
                         break;
 
                     default: Console.WriteLine("Выбор неверен "); break;
